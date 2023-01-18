@@ -38,7 +38,7 @@ export class ProductService {
 
   // products
   products$ = this.http.get<Product[]>(this.productsUrl).pipe(
-    tap((data) => console.log('Products: ', JSON.stringify(data))),
+    // tap((data) => console.log('Products: ', JSON.stringify(data))),
     catchError(this.handleError)
   );
 
@@ -59,7 +59,7 @@ export class ProductService {
       )
     ),
     shareReplay(1),
-    tap(() => console.log('share'))
+    // tap(data => console.log('share', data))
   );
 
   // product selected subject

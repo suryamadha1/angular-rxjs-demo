@@ -1,10 +1,10 @@
 <div class="card"
-     *ngIf="vm$ | async as vm">
+     *ngIf="pageTitle$ | async as pageTitle">
   <div class="card-header" *ngIf="pageTitle$ | async as pageTitle">
-    {{ vm.pageTitle }}
+    {{ pageTitle }}
   </div>
 
-  <div class="card-body" *ngIf="vm.product as product">
+  <div class="card-body" *ngIf="product$ | async as product">
     <div class="row">
       <div class="col-md-2">Name:</div>
       <div class="col-md-6">{{ product.productName }}</div>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="table-responsive"
-          *ngIf="vm.productSuppliers as productSuppliers">
+          *ngIf="productSuppliersJIT$ | async as productSuppliers">
       <table class="table mb-0"
              *ngIf="productSuppliers.length; else noSuppliers">
         <thead>

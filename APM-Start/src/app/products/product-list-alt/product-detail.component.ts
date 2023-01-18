@@ -53,16 +53,16 @@ export class ProductDetailComponent {
     )
   );
 
-  vm$ = combineLatest([
-    this.product$,
-    this.productSuppliersJIT$,
-    this.pageTitle$,
-  ])
-  .pipe(
-    filter(([product]) => Boolean(product)),
-    map(([product, productSuppliers, pageTitle]) => 
-    ({product, productSuppliers, pageTitle}))
-  );
+  // vm$ = combineLatest([
+  //   this.product$,
+  //   this.productSuppliersJIT$,
+  //   this.pageTitle$,
+  // ])
+  // .pipe(
+  //   filter(([product]) => Boolean(product)),
+  //   map(([product, productSuppliers, pageTitle]) => 
+  //   ({product, productSuppliers, pageTitle}))
+  // );
 
   constructor(private productService: ProductService) { }
 
